@@ -19,6 +19,11 @@ namespace clientWinFormsApp1
                 .WithUrl("https://localhost:7018/chat")
                 .Build();
 
+            connection.On<string>("Error", (error) =>
+            {
+                MessageBox.Show(error);
+            });
+
             connection.On<string, string>("Receive", (user, message) =>
             {
                 Messages.Invoke(new Action(() => { Messages.Items.Add($"{user}: {message}"); }));
@@ -29,8 +34,31 @@ namespace clientWinFormsApp1
                 Messages.Invoke(new Action(() => { Messages.Items.Add($"{user}: {message}"); }));
             });
 
-            await connection.StartAsync();
-            await connection.InvokeAsync("OldMessages");
+            connection.On<string>("GetNewUsers", (user) =>
+            {
+                AllUsers.Invoke(new Action(() => { AllUsers.Items.Add(user); }));
+            });
+
+            connection.On<string>("RemoveNewUsers", (user) =>
+            {
+                AllUsers.Invoke(new Action(() => { AllUsers.Items.Remove(user); }));
+            });
+
+            try 
+            { 
+                await connection.StartAsync();
+                statusText.Text = "Online";
+                statusText.ForeColor = Color.Green;
+
+                await connection.InvokeAsync("OldMessages");
+                await connection.InvokeAsync("RegisterNewConnection");
+            } 
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+                statusText.ForeColor = Color.Black;
+                statusText.Text = "Offline";
+            }            
         }
 
         private async void Send_Click(object sender, EventArgs e)
@@ -42,6 +70,10 @@ namespace clientWinFormsApp1
         private async void Setnickname_Click(object sender, EventArgs e)
         {
             nickname = Nickname.Text;
+
+            await connection.InvokeAsync("RegisterUser", nickname);
+
+            Setnickname.Enabled = false;
         }
     }
 }

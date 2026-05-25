@@ -34,6 +34,9 @@
             Send = new Button();
             Messages = new ListBox();
             Setnickname = new Button();
+            AllUsers = new ListBox();
+            label2 = new Label();
+            statusText = new Label();
             SuspendLayout();
             // 
             // Nickname
@@ -72,9 +75,9 @@
             // Messages
             // 
             Messages.FormattingEnabled = true;
-            Messages.Location = new Point(12, 41);
+            Messages.Location = new Point(126, 41);
             Messages.Name = "Messages";
-            Messages.Size = new Size(776, 364);
+            Messages.Size = new Size(662, 364);
             Messages.TabIndex = 4;
             // 
             // Setnickname
@@ -87,11 +90,39 @@
             Setnickname.UseVisualStyleBackColor = true;
             Setnickname.Click += Setnickname_Click;
             // 
+            // AllUsers
+            // 
+            AllUsers.FormattingEnabled = true;
+            AllUsers.Location = new Point(12, 56);
+            AllUsers.Name = "AllUsers";
+            AllUsers.Size = new Size(108, 349);
+            AllUsers.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 15);
+            label2.TabIndex = 7;
+            label2.Text = "online users:";
+            // 
+            // statusText
+            // 
+            statusText.AutoSize = true;
+            statusText.Location = new Point(747, 20);
+            statusText.Name = "statusText";
+            statusText.Size = new Size(0, 15);
+            statusText.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(statusText);
+            Controls.Add(label2);
+            Controls.Add(AllUsers);
             Controls.Add(Setnickname);
             Controls.Add(Messages);
             Controls.Add(Send);
@@ -112,5 +143,8 @@
         private Button Send;
         private ListBox Messages;
         private Button Setnickname;
+        private ListBox AllUsers;
+        private Label label2;
+        private Label statusText;
     }
 }

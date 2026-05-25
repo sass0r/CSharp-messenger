@@ -14,8 +14,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +32,7 @@
               "RelativeDocumentMoniker": "serverWebApplication1\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\.\u0432\u0441\u0451\u043C\u043E\u0451\\C#\\messenger\\serverWebApplication1\\serverWebApplication1\\Program.cs",
               "RelativeToolTip": "serverWebApplication1\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAGBnwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowBAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T14:01:36.7Z",
               "EditorCaption": ""
