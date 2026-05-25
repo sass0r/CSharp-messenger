@@ -76,7 +76,6 @@ dotnet run --project clientWinFormsApp1.csproj
 Database file is located in /DB/messenger.db
 Use DB Browser for SQLite to inspect or modify data
 ✨ Features
-- User registration & authentication
 - Real-time text messaging
 - Chat history persistence
 - Connection status indicators
