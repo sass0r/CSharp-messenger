@@ -82,4 +82,5 @@ Use DB Browser for SQLite to inspect or modify data
 - Connection status indicators
 - File sharing (planned)
 - Group chats (planned)
+
 ⚠️ Note: This project is under active development. Some features may be incomplete.
